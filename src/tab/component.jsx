@@ -1,7 +1,7 @@
-function Tab({text, callback, currentRestaraunt}) {
+function Tab({text, callback, disabled}) {
 
     return ( 
-    <button disabled={text==currentRestaraunt.name?true:false} onClick={callback}>
+    <button disabled={disabled} onClick={callback}>
         {text}
     </button> );
 }

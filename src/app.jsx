@@ -18,7 +18,7 @@ function App() {
               return  <Tab 
               callback={()=>{setCurrentRestaurant(restaurant)}} 
               text={restaurant.name} 
-              currentRestaraunt={currentRestaurant}/>
+              disabled={currentRestaurant.name == restaurant.name ? true : false}/>
             })}
 
             {/* Display current restaraunt */}
