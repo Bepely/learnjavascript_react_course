@@ -15,9 +15,10 @@ function App() {
             <Layout>
             {/* Display selection tabs for each restaraunt */}
             {restaurants.map((restaurant) => {
-              return <>
-              <Tab restaurant={restaurant} setCurrentRestaurant={setCurrentRestaurant}/>
-              </>  
+              return  <Tab 
+              callback={()=>{setCurrentRestaurant(restaurant)}} 
+              text={restaurant.name} 
+              currentRestaraunt={currentRestaurant}/>
             })}
 
             {/* Display current restaraunt */}

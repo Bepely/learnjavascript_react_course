@@ -4,14 +4,17 @@ function Counter() {
     // Create a counter for added dishes
     const [itemsCounter, setItemsCounter] = useState(0);
 
+    const itemsMin = 0;
+    const itemsMax = 5;
+
     function addItem() {
-        if (itemsCounter < 5) {
+        if (itemsCounter < itemsMax) {
             setItemsCounter(itemsCounter + 1);
         }
     }
 
     function removeItem() {
-        if (itemsCounter > 0) {
+        if (itemsCounter > itemsMin) {
             setItemsCounter(itemsCounter - 1);
         }
     }

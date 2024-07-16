@@ -1,14 +1,8 @@
-function Tab({restaurant, setCurrentRestaurant}) {
-
-    // Create a callback fucntion for a button click
-    const changeCurrentRestaurant = function(){
-        // Update currentRestaraunt state
-        setCurrentRestaurant(restaurant)
-    }
+function Tab({text, callback, currentRestaraunt}) {
 
     return ( 
-    <button onClick={changeCurrentRestaurant}>
-        {restaurant.name}
+    <button disabled={text==currentRestaraunt.name?true:false} onClick={callback}>
+        {text}
     </button> );
 }
 
