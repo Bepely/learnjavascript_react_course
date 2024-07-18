@@ -6,6 +6,8 @@ import { useState } from "react";
 
 import {restaurants} from './mock'
 
+import './style.css'
+
 function App() {
 
     const [currentRestaurant, setCurrentRestaurant] = useState(restaurants[0])
@@ -18,10 +20,13 @@ function App() {
               return  <Tab 
               callback={()=>{setCurrentRestaurant(restaurant)}} 
               text={restaurant.name} 
-              disabled={currentRestaurant.name == restaurant.name ? true : false}/>
+              disabled={currentRestaurant.name === restaurant.name}/>
             })}
 
             {/* Display current restaraunt */}
+            <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
+            <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
+            <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
             <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
 
             </Layout>

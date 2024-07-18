@@ -1,3 +1,5 @@
+import ReviewForm from "../reviewForm/component"
+
 function Review({reviews}) {
     return (
     <div>
@@ -10,6 +12,7 @@ function Review({reviews}) {
             })}
             </ul>
         )}
+        <ReviewForm />
     </div>
     );
 }
