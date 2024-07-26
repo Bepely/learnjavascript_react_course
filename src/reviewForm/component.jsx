@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import "./style.css";
 
 const INITIAL_STATE = {
@@ -35,8 +35,6 @@ const formReducer = (state, action) => {
             };
 
         case "SAVE_REVIEW":
-            document.getElementById('reviewNameInput').value = '';
-            document.getElementById('reviewTextInput').value = '';
             return {
                 ...INITIAL_STATE
             };
@@ -97,6 +95,7 @@ function ReviewForm() {
                 name="name"
                 id="reviewNameInput"
                 onChange={handleNameInput}
+                value={state.name}
                 placeholder="Enter your name..."
             />
             <br/>
@@ -105,6 +104,7 @@ function ReviewForm() {
                 name="text"
                 id="reviewTextInput"
                 onChange={handleTextInput}
+                value={state.text}
                 placeholder="Enter your review..."
             />
             <div id="inputRadioContainer">

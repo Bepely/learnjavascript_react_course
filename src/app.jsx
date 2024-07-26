@@ -1,36 +1,42 @@
 import Layout from "./layout/component";
 import Restaurant from "./restauraunt/component";
-import Tab from "./tab/component";
+import RestaurantTabsContainer from "./restarauntTabsContainer/restarauntTabsContainer";
 
-import { useState } from "react";
+import { ThemeContextProvider } from "./themeContext";
+import { UserContextProvider } from "./userContext";
 
-import {restaurants} from './mock'
+import { useState} from "react";
+
+import { restaurants } from "./mock";
 
 import './style.css'
+import { useCallback } from "react";
+
+
 
 function App() {
 
     const [currentRestaurant, setCurrentRestaurant] = useState(restaurants[0])
+    const [theme, setTheme] = useState('light')
+    const [user, setUser] = useState(null);
+
+    const toggleTheme = useCallback(()=>{setTheme((current)=> current==='light'?'dark':'light')}, [])
+    const toggleUser = useCallback(()=>{setUser((current) => current===null ? 'USERNAME' : null)})
 
     return ( 
-        <div>
+        <ThemeContextProvider value={{value: theme, toggleTheme}}>
+        <UserContextProvider value={{value: user, toggleUser}}>   
             <Layout>
-            {/* Display selection tabs for each restaraunt */}
-            {restaurants.map((restaurant) => {
-              return  <Tab 
-              callback={()=>{setCurrentRestaurant(restaurant)}} 
-              text={restaurant.name} 
-              disabled={currentRestaurant.name === restaurant.name}/>
-            })}
+    
+            <RestaurantTabsContainer currentRestaurant={currentRestaurant} setCurrentRestaurant={setCurrentRestaurant}/>
 
             {/* Display current restaraunt */}
             <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
-            <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
-            <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
-            <Restaurant name={currentRestaurant.name} menu={currentRestaurant.menu} reviews={currentRestaurant.reviews}/>
+            
 
             </Layout>
-        </div>
+        </UserContextProvider> 
+        </ThemeContextProvider>
      );
 }
 

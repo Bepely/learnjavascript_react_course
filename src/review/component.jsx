@@ -1,8 +1,10 @@
 import ReviewForm from "../reviewForm/component"
 
+import styles from './style.module.css'
+
 function Review({reviews}) {
     return (
-    <div>
+    <div className={styles.reviewsWrapper}>
         <h3>Отзывы</h3>
         {reviews?.length && (
             <ul>

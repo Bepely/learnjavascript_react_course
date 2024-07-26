@@ -1,13 +1,22 @@
 import Counter from "../counter/component";
+import { useUser } from "../userContext";
+
+import styles from './style.module.css'
+
+
 
 function Menu({menu}) {
+    const userValue = useUser()
+
     return (  
-    <div>
+    <div className={styles.menuWrapper}>
         <h3>Меню</h3>
         {menu?.length && (
-            <ul>
+            <ul >
             {menu.map((element) => {
-                return <li key={element.id}>{element.name} <Counter /></li>
+                return <li className={styles.menuItem} key={element.id}>{element.name} 
+                {userValue.value !== null ? <Counter /> : ''}
+                </li>
             })}
         </ul>
         )}
