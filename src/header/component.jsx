@@ -1,7 +1,31 @@
+import styles from './style.module.css'
+import classnames from "classnames";
+
+import { useTheme } from "../themeContext";
+import { useUser } from "../userContext"
+
+import UserButton from '../userButton/component';
+
+
+
+
 function Header() {
+    const themeValue = useTheme()
+    const userValue = useUser()
+
     return ( 
-        <div>
-            Header
+        <div className={classnames(styles.header, {
+            [styles.light]: themeValue.value === 'light',
+            [styles.dark]: themeValue.value === 'dark'
+        })}>
+            <h1>Доставка еды</h1>
+            
+
+            
+            <div className={styles.loginWrapper}>
+                <span>{userValue.value !== null ? userValue.value : ''} </span>
+                <UserButton />
+            </div>
         </div>
      );
 }

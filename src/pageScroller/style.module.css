@@ -1,0 +1,7 @@
+.pageScroller{
+    position: fixed;
+
+    height: 10px;
+
+    background: red;
+}

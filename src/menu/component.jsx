@@ -1,13 +1,16 @@
-import Counter from "../counter/component";
+import MenuItem from "../menuItem/component";
+
+import styles from './style.module.css'
 
 function Menu({menu}) {
+
     return (  
-    <div>
+    <div className={styles.menuWrapper}>
         <h3>Меню</h3>
         {menu?.length && (
-            <ul>
+            <ul className={styles.listWrapper}>
             {menu.map((element) => {
-                return <li key={element.id}>{element.name} <Counter /></li>
+                return <MenuItem menuItem={element} />
             })}
         </ul>
         )}

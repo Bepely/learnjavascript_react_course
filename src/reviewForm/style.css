@@ -1,0 +1,10 @@
+.star {
+    font-size: 1.5em;
+    margin: 5px;
+    user-select: none;
+  }
+
+
+input[type="radio"] {
+    display: none;
+  }

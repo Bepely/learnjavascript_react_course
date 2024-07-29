@@ -1,0 +1,12 @@
+.restarauntWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+}
+
+.restarauntMenuWrapper{
+    display: grid;
+
+    grid-template-rows: 1fr 5fr;
+    place-items: center;
+}
