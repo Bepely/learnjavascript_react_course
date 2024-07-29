@@ -22,7 +22,7 @@ function Header() {
             
 
             
-            <div>
+            <div className={styles.loginWrapper}>
                 <span>{userValue.value !== null ? userValue.value : ''} </span>
                 <UserButton />
             </div>

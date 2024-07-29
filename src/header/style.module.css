@@ -24,3 +24,14 @@
     background-color: var(--dark-dim);
     color: white;
 }
+
+
+.loginWrapper{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import './style.css';
+import styles from './style.module.css';
 
 const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -26,7 +26,7 @@ function PageScroller() {
 
     return (
         <div
-            id="pageScroller"
+            className={styles.pageScroller}
             style={{
                 width: `${scrollerWidth}%`,
             }}

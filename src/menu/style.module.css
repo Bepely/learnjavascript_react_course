@@ -8,9 +8,7 @@
     place-items: center;
 }
 
-.menuItem{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    justify-items: end;
+.listWrapper{
+    width: 100%;
+    height: 100%;
 }
