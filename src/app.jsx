@@ -1,12 +1,12 @@
-import Layout from "./layout/component";
+import Layout from "./components/layout/component"
 
-import { ThemeContextProvider } from "./themeContext";
-import { UserContextProvider } from "./userContext";
+import { ThemeContextProvider } from "./components/themeContext";
+import { UserContextProvider } from "./components/userContext";
 
 import './style.css'
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import RestaurantWrapper from "./restarauntWrapper/component";
+import RestaurantWrapper from "./components/restarauntWrapper/component";
 
 
 function App() {

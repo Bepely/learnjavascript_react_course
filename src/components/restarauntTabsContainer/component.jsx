@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import styles from './style.module.css';
 import Tab from '../tab/component';
-import { selectRestarantsIds, selectRestarauntById } from '../redux/entities/restaraunt';
+import { selectRestarantsIds, selectRestarauntById } from '../../redux/entities/restaraunt';
 
-function RestaurantTabsContainer({ currentRestaurant, setCurrentRestaurantId }) {
+function RestaurantTabsContainer({ currentRestaurantId, setCurrentRestaurantId }) {
     // Get restaurant IDs from the Redux store
     const restaurantIds = useSelector(selectRestarantsIds);
 
@@ -20,7 +20,7 @@ function RestaurantTabsContainer({ currentRestaurant, setCurrentRestaurantId }) 
                     key={restaurant.id}
                     callback={() => setCurrentRestaurantId(restaurant.id)} 
                     text={restaurant.name} 
-                    disabled={currentRestaurant.id === restaurant.id}
+                    disabled={currentRestaurantId === restaurant.id}
                 />
             ))}
         </div>

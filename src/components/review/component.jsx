@@ -1,8 +1,14 @@
 import ReviewForm from "../reviewForm/component"
-
+import { useSelector } from "react-redux";
+import { selectReviewById } from "../../redux/entities/review";
 import styles from './style.module.css'
 
-function Review({reviews}) {
+function Review({reviewIds}) {
+
+    const reviews = useSelector((state) => 
+        reviewIds.map(reviewId => selectReviewById(state, reviewId))    
+    )
+
     return (
     <div className={styles.reviewsWrapper}>
         <h3>Отзывы</h3>

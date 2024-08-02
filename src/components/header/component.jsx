@@ -1,7 +1,7 @@
 import styles from './style.module.css'
 import classnames from "classnames";
 
-import { useTheme } from "../themeContext";
+import { useTheme } from '../themeContext';
 import { useUser } from "../userContext"
 
 import UserButton from '../userButton/component';
