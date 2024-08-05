@@ -11,8 +11,8 @@ function Review({reviewIds}) {
         {reviewIds?.length && (
             <ul>
             {reviewIds.map(reviewId => {
-                return <li key={`review-content-li-${reviewId}`}>
-                    <ReviewContent key={`review-content-${reviewId}`} reviewId={reviewId}/>
+                return <li key={reviewId}>
+                    <ReviewContent reviewId={reviewId}/>
                 </li>
             })}
             </ul>
