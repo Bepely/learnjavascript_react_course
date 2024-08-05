@@ -11,7 +11,9 @@ function Menu({menuDishesIds}) {
         {menuDishesIds?.length && (
             <ul className={styles.listWrapper}>
             {menuDishesIds.map((dishId) => {
-                return <MenuItem dishId={dishId} />
+                return <li key={`menu-item-li-${dishId}`} className={styles.menuItem}>
+                    <MenuItem key={`menu-item-${dishId}`} dishId={dishId} />
+                    </li>
             })}
         </ul>
         )}

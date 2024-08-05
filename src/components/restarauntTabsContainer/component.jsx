@@ -7,20 +7,16 @@ function RestaurantTabsContainer({ currentRestaurantId, setCurrentRestaurantId }
     // Get restaurant IDs from the Redux store
     const restaurantIds = useSelector(selectRestarantsIds);
 
-    // Map over the restaurant IDs to get the actual restaurant objects
-    const restaurants = useSelector((state) =>
-        restaurantIds.map((id) => selectRestarauntById(state, id))
-    );
 
     return (
         <div className={styles.restarauntTabsContainer}>
             {/* Display selection tabs for each restaurant */}
-            {restaurants.map((restaurant) => (
+            {restaurantIds.map((restaurantId) => (
                 <Tab 
-                    key={restaurant.id}
-                    callback={() => setCurrentRestaurantId(restaurant.id)} 
-                    text={restaurant.name} 
-                    disabled={currentRestaurantId === restaurant.id}
+                    key={`restaurant-tab-${restaurantId}`}
+                    restaurantId={restaurantId}
+                    currentRestaurantId={currentRestaurantId}
+                    callback={() => setCurrentRestaurantId(restaurantId)} 
                 />
             ))}
         </div>

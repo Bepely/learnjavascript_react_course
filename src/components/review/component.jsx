@@ -1,22 +1,19 @@
 import ReviewForm from "../reviewForm/component"
-import { useSelector } from "react-redux";
-import { selectReviewById } from "../../redux/entities/review";
 import styles from './style.module.css'
 
-function Review({reviewIds}) {
+import ReviewContent from "../reviewContent/component";
 
-    const reviews = useSelector((state) => 
-        reviewIds.map(reviewId => selectReviewById(state, reviewId))    
-    )
+function Review({reviewIds}) {
 
     return (
     <div className={styles.reviewsWrapper}>
         <h3>Отзывы</h3>
-        {reviews?.length && (
+        {reviewIds?.length && (
             <ul>
-            {/* Display every review */}
-            {reviews.map(review => {
-                return <li>{review.text}</li>
+            {reviewIds.map(reviewId => {
+                return <li key={`review-content-li-${reviewId}`}>
+                    <ReviewContent key={`review-content-${reviewId}`} reviewId={reviewId}/>
+                </li>
             })}
             </ul>
         )}

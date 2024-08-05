@@ -2,18 +2,26 @@ import styles from "./style.module.css"
 import classnames from "classnames";
 import { useTheme } from "../themeContext";
 
-function Tab({text, callback, disabled}) {
+import { useSelector } from "react-redux";
+import { selectRestarauntById } from "../../redux/entities/restaraunt";
+
+function Tab({restaurantId, currentRestaurantId, callback}) {
 
     const themeValue = useTheme()
+
+    const restaurant = useSelector((state) =>{
+        return selectRestarauntById(state, restaurantId)
+    }
+    );
     
     return ( 
-    <button disabled={disabled} onClick={callback}
+    <button disabled={restaurant.id === currentRestaurantId} onClick={callback}
         className={classnames(styles.button, {
             [styles.light]: themeValue.value === 'light',
             [styles.dark]: themeValue.value === 'dark'
         })}
     >
-        {text}
+        {restaurant.name}
     </button> );
 }
 
