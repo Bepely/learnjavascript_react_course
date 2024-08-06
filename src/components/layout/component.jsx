@@ -1,4 +1,4 @@
-import Header from "../header/component";
+import Header from "../header/component"
 import Footer from "../footer/component";
 import PageScroller from "../pageScroller/component";
 

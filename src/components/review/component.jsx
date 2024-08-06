@@ -1,16 +1,19 @@
 import ReviewForm from "../reviewForm/component"
-
 import styles from './style.module.css'
 
-function Review({reviews}) {
+import ReviewContent from "../reviewContent/component";
+
+function Review({reviewIds}) {
+
     return (
     <div className={styles.reviewsWrapper}>
         <h3>Отзывы</h3>
-        {reviews?.length && (
+        {reviewIds?.length && (
             <ul>
-            {/* Display every review */}
-            {reviews.map(review => {
-                return <li>{review.text}</li>
+            {reviewIds.map(reviewId => {
+                return <li key={reviewId}>
+                    <ReviewContent reviewId={reviewId}/>
+                </li>
             })}
             </ul>
         )}

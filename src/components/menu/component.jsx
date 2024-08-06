@@ -2,15 +2,18 @@ import MenuItem from "../menuItem/component";
 
 import styles from './style.module.css'
 
-function Menu({menu}) {
+
+function Menu({menuDishesIds}) {
 
     return (  
     <div className={styles.menuWrapper}>
         <h3>Меню</h3>
-        {menu?.length && (
+        {menuDishesIds?.length && (
             <ul className={styles.listWrapper}>
-            {menu.map((element) => {
-                return <MenuItem menuItem={element} />
+            {menuDishesIds.map((dishId) => {
+                return <li key={dishId} className={styles.menuItem}>
+                    <MenuItem dishId={dishId} />
+                    </li>
             })}
         </ul>
         )}
