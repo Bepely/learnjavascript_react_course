@@ -1,7 +1,7 @@
-.pageScroller{
-    position: fixed;
+.pageScroller {
+  position: fixed;
 
-    height: 10px;
+  height: 10px;
 
-    background: red;
+  background: red;
 }

@@ -1,19 +1,23 @@
-.button{
-    padding: 10px 20px;
-    border-radius: 5px;
+.button {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
 
+  text-decoration: none;
 }
 
-.light{
-    background-color: var(--light-dim);
-    color: black;
+.light {
+  background-color: var(--light-dim);
+  color: black;
 }
 
-.dark{
-    background-color: var(--dark-dim);
-    color: white;
+.dark {
+  background-color: var(--dark-dim);
+  color: white;
 }
 
-:disabled{
-    opacity: 0.5;
+.active {
+  opacity: 0.5;
 }
