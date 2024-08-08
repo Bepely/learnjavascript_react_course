@@ -21,11 +21,7 @@ function RestaurantCartSection({ id }) {
     dispatch(removeCartItem(id));
   };
 
-  return (
-    <>
-      <Counter value={amount} increment={addItem} decrement={removeItem} />
-    </>
-  );
+  return <Counter value={amount} increment={addItem} decrement={removeItem} />;
 }
 
 export default RestaurantCartSection;

@@ -1,8 +1,8 @@
 import Header from "../header/component";
 import Footer from "../footer/component";
 import PageScroller from "../pageScroller/component";
-import Cart from "../cart/component";
 import { Outlet } from "react-router-dom";
+import CartWrapper from "../cartWrapper/component";
 
 function Layout() {
   return (
@@ -10,7 +10,7 @@ function Layout() {
       <PageScroller />
       <Header />
       <Outlet />
-      <Cart />
+      <CartWrapper />
       <Footer />
     </div>
   );

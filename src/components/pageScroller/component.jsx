@@ -31,7 +31,7 @@ function PageScroller() {
       style={{
         width: `${scrollerWidth}%`,
       }}
-    ></div>
+    />
   );
 }
 
