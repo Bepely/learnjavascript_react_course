@@ -1,17 +1,17 @@
-.button{
-    padding: 5px;
-    border-radius: 3px;
+.button {
+  padding: 5px;
+  border-radius: 3px;
 
-    width: fit-content;
-    min-width: 70px;
+  width: fit-content;
+  min-width: 70px;
 }
 
-.light{
-    background-color: var(--light-main);
-    color: black;
+.light {
+  background-color: var(--light-main);
+  color: black;
 }
 
-.dark{
-    background-color: var(--dark-main);
-    color: white;
+.dark {
+  background-color: var(--dark-main);
+  color: white;
 }
