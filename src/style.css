@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    --light-accent: rgb(108, 198, 208);
+    --light-main: rgb(211, 228, 230);
+    --light-dim: rgb(186, 228, 233);
+
+    --dark-accent: rgb(25, 88, 97);
+    --dark-main: rgb(13, 48, 53);
+    --dark-dim: rgb(20, 70, 78);
+
+    font-family: 'Roboto';
+}

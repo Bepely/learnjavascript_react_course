@@ -1,0 +1,10 @@
+.restarauntTabsContainer {
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+}
+
+.restarauntTabsContainer > button {
+  margin: 10px;
+  padding: 5px 10px;
+}

@@ -1,0 +1,13 @@
+.counterWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+
+  width: 100%;
+
+  place-items: center;
+  justify-items: center;
+}
+
+.counterWrapper > button {
+  min-width: 25px;
+}
